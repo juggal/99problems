@@ -1,17 +1,35 @@
 # Pack consecutive duplicates of list elements into sublists.
 
-values = input("Enter elements:").split()
-encoded_values = []
-
-temp = [values[0]]
-for elem in values[1:]:
-    if elem in temp:
-        temp.append(elem)
-    else:
-        encoded_values.append(temp)
-        temp = [elem]
-
-encoded_values.append(temp)
+from linked_list.sll import sll
 
 
-print(encoded_values)
+def pack(ll):
+    curr = ll.head
+    prev = curr.data
+    result = "(("
+
+    while curr != None:
+        if prev == curr.data:
+            result += str(curr.data) + " "
+        else:
+            prev = curr.data
+            result = result.strip(" ")
+            result += ") (" + str(prev) + " "
+        curr = curr.link
+    result = result.strip(" ")
+    result += "))"
+
+    return result
+
+
+def main():
+    values = input("Enter elements:").split()
+    ll = sll()
+    for elem in values:
+        ll.insert(elem)
+
+    print(pack(ll))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,23 +1,42 @@
 # Modified run-length encoding.
 
-values = input("Enter elements:").split()
-encoded_values = []
-temp1 = [values[0]]
-temp2 = []
+from linked_list.sll import sll
 
-for elem in values[1:]:
-    if elem in temp1:
-        temp1.append(elem)
+
+def encode(ll):
+    curr = ll.head
+    prev = curr.data
+    result = "("
+    count = 0
+
+    while curr != None:
+        if prev == curr.data:
+            count += 1
+        else:
+            if count == 1:
+                result += " " + str(prev) + " "
+            else:
+                result += "(" + str(count) + " " + str(prev) + ")"
+            prev = curr.data
+            count = 1
+        curr = curr.link
+
+    if count == 1:
+        result += " " + str(prev) + ")"
     else:
-        temp2.append(temp1)
-        temp1 = [elem]
+        result += "(" + str(count) + " " + str(prev) + "))"
 
-temp2.append(temp1)
+    return result
 
-for elem in temp2:
-    if len(elem) == 1:
-        encoded_values.append(elem[0])
-    else:
-        encoded_values.append([len(elem), elem[0]])
 
-print(encoded_values)
+def main():
+    values = input("Enter elements:").split()
+    ll = sll()
+    for elem in values:
+        ll.insert(elem)
+
+    print(encode(ll))
+
+
+if __name__ == "__main__":
+    main()

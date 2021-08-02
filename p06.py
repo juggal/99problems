@@ -1,9 +1,40 @@
 # Find out whether a list is a palindrome
 
-values = input("Enter elements:").split()
-rev_values = list(reversed(values))
+from linked_list.sll import sll
 
-if values == rev_values:
-    print('Palindrome')
-else:
-    print('Not Palindrome')
+
+def is_palindrome(ll):
+    curr = ll.head
+    temp = []
+
+    while curr != None:
+        temp.append(curr.data)
+        curr = curr.link
+
+    # reset current position
+    curr = ll.head
+    while curr != None:
+        elem = temp.pop()
+        if curr.data == elem:
+            curr = curr.link
+        else:
+            break
+
+    if curr == None:
+        return True
+    else:
+        return False
+
+
+def main():
+    values = input("Enter elements:").split()
+    ll = sll()
+    for elem in values:
+        ll.insert(elem)
+
+    result = is_palindrome(ll)
+    print(result)
+
+
+if __name__ == "__main__":
+    main()

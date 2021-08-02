@@ -1,11 +1,32 @@
 # Eliminate consecutive duplicates of list elements.
 
-values = input("Enter elements:").split()
-de_duplicate = []
+from linked_list.sll import sll
 
-"""Go through each element of input list iteratively if it does not exist in new list push the element"""
-for elem in values:
-    if elem not in de_duplicate:
-        de_duplicate.append(elem)
 
-print(de_duplicate)
+def compress(ll):
+    curr = ll.head
+    prev = curr
+
+    while curr.link != None:
+        if prev.data != curr.data:
+            prev.link = curr
+            prev = curr
+        curr = curr.link
+
+    if prev.data == curr.data:
+        prev.link = None
+
+    ll.display()
+
+
+def main():
+    values = input("Enter elements:").split()
+    ll = sll()
+    for elem in values:
+        ll.insert(elem)
+
+    compress(ll)
+
+
+if __name__ == "__main__":
+    main()
