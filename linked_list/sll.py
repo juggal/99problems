@@ -5,8 +5,8 @@ class Node:
 
 
 class sll:
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head = head
 
     def insert(self, data):
         if self.head == None:
@@ -17,7 +17,7 @@ class sll:
                 curr = curr.link
             curr.link = Node(data)
 
-    def display(self, sublist=False):
+    def display(self):
         curr = self.head
         result = ''
         while curr != None:
@@ -25,3 +25,13 @@ class sll:
             curr = curr.link
         result = result.strip("->")
         print(result)
+
+    def get_length(self):
+        curr = self.head
+        length = 0
+
+        while curr != None:
+            length += 1
+            curr = curr.link
+
+        return length

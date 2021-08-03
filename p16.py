@@ -1,13 +1,34 @@
 # Drop every N'th element from a list
 
-values = input("Enter elements:").split()
-n = int(input("N:"))
-new_values = []
+from linked_list.sll import sll, Node
 
-i = 0
-while i < len(values):
-    if (i + 1) % n != 0:
-        new_values.append(values[i])
-    i += 1
 
-print(new_values)
+def drop(ll, n):
+    curr = ll.head
+    count = 1
+    prev = None
+
+    while curr != None:
+        if count % n == 0:
+            prev.link = curr.link
+            curr = prev.link
+        else:
+            prev = curr
+            curr = curr.link
+        count += 1
+
+
+def main():
+    values = input("Enter elements:").split()
+    n = int(input("Nth element:"))
+    ll = sll()
+
+    for elem in values:
+        ll.insert(elem)
+
+    drop(ll, n)
+    ll.display()
+
+
+if __name__ == "__main__":
+    main()

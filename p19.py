@@ -1,21 +1,51 @@
 # Rotate a list N places to the left
 
-values = input("Enter elements:").split()
-n = int(input("N:"))
+from linked_list.sll import sll
 
-shifted_values = values[n:] + values[:n]
 
-# if n < 0:
-#     n = len(values) + n
-# temp1 = []
-# temp2 = []
+def list_split(ll, pos):
+    curr = ll.head
+    count = 1
+    temp_list = None
 
-# for idx, elem in enumerate(values):
-#     if (idx + 1) <= n:
-#         temp1.append(elem)
-#     else:
-#         temp2.append(elem)
+    if pos < 0:
+        pos = ll.get_length() + pos
 
-# shifted_values = temp2 + temp1
+    while curr != None:
+        if count == pos:
+            temp_list = sll(curr.link)
+            curr.link = None
+            break
+        curr = curr.link
+        count += 1
 
-print(shifted_values)
+    return temp_list
+
+
+def list_rotate(ll, n):
+    curr = ll.head
+    count = 1
+
+    split_2 = list_split(ll, n)
+
+    while curr != None:
+        split_2.insert(curr.data)
+        curr = curr.link
+
+    return split_2
+
+
+def main():
+    values = input("Enter elements:").split()
+    n = int(input("Rotate:"))
+    ll = sll()
+
+    for elem in values:
+        ll.insert(elem)
+
+    rotated_list = list_rotate(ll, n)
+    rotated_list.display()
+
+
+if __name__ == "__main__":
+    main()

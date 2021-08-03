@@ -16,8 +16,6 @@ def compress(ll):
     if prev.data == curr.data:
         prev.link = None
 
-    ll.display()
-
 
 def main():
     values = input("Enter elements:").split()
@@ -26,6 +24,7 @@ def main():
         ll.insert(elem)
 
     compress(ll)
+    ll.display()
 
 
 if __name__ == "__main__":

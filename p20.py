@@ -1,7 +1,36 @@
 # Remove the K'th element from a list
 
-values = input("Enter elements:").split()
-k = int(input("K:"))
+from linked_list.sll import sll
 
-new_values = values[:k - 1] + values[k:]
-print(new_values)
+
+def remote_at(ll, pos):
+    curr = ll.head
+    count = 1
+    prev = None
+
+    if pos == 1:
+        ll.head = curr.link
+    else:
+        while curr != None:
+            if count == pos:
+                prev.link = curr.link
+
+            prev = curr
+            curr = curr.link
+            count += 1
+
+
+def main():
+    values = input("Enter elements:").split()
+    n = int(input("Remove element at:"))
+    ll = sll()
+
+    for elem in values:
+        ll.insert(elem)
+
+    remote_at(ll, n)
+    ll.display()
+
+
+if __name__ == "__main__":
+    main()

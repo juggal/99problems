@@ -1,17 +1,36 @@
 # Split a list into two parts; the length of the first part is given
 
-values = input("Enter elements:").split()
-n = int(input("N:"))
+from linked_list.sll import sll, Node
 
-temp1 = []
-temp2 = []
 
-for idx, elem in enumerate(values):
-    if (idx + 1) <= n:
-        temp1.append(elem)
-    else:
-        temp2.append(elem)
+def list_split(ll, pos):
+    curr = ll.head
+    count = 1
+    temp_list = None
 
-split_values = [temp1, temp2]
+    while curr != None:
+        if count == pos:
+            temp_list = sll(curr.link)
+            curr.link = None
+            break
+        curr = curr.link
+        count += 1
 
-print(split_values)
+    return temp_list
+
+
+def main():
+    values = input("Enter elements:").split()
+    n = int(input("Split at:"))
+    ll = sll()
+
+    for elem in values:
+        ll.insert(elem)
+
+    temp = list_split(ll, n)
+    ll.display()
+    temp.display()
+
+
+if __name__ == "__main__":
+    main()
