@@ -3,7 +3,7 @@
 from linked_list.sll import sll
 
 
-def remote_at(ll, pos):
+def remove_at(ll, pos):
     curr = ll.head
     count = 1
     prev = None
@@ -28,7 +28,7 @@ def main():
     for elem in values:
         ll.insert(elem)
 
-    remote_at(ll, n)
+    remove_at(ll, n)
     ll.display()
 
 

@@ -1,30 +1,60 @@
 # Lotto: Draw N different random numbers from the set 1..M
 
+from linked_list.sll import sll
 import random
 
-M = int(input("M:"))
-N = int(input("N:"))
+
+def rnd_select(ll, n):
+    curr = ll.head
+    stack = []
+    temp_list = sll()
+
+    i = 1
+    while i <= n:
+        stack.append(random.randint(1, ll.get_length()))
+        i += 1
+
+    i = 1
+    while i <= n:
+        elem = ll.get_element(stack.pop())
+        temp_list.insert(elem)
+        i += 1
+
+    return temp_list
 
 
 def gen_range(start, end):
-    values = []
+    ll = sll()
+
     if end < start:
         i = start
         while i >= end:
-            values.append(i)
+            ll.insert(i)
             i -= 1
+
     else:
         i = start
         while i <= end:
-            values.append(i)
+            ll.insert(i)
             i += 1
-    return values
+
+    return ll
 
 
-values = gen_range(1, M)
+def lotto_select(m, n):
+    ll = gen_range(1, m)
+    temp_list = rnd_select(ll, n)
 
-idx = [random.randint(0, (len(values) - 1)) for i in range(N)]
+    return temp_list
 
-random_values = [values[i] for i in idx]
 
-print(random_values)
+def main():
+    m = int(input("Enter M:"))
+    n = int(input("Enter N:"))
+
+    lotto_list = lotto_select(m, n)
+    lotto_list.display()
+
+
+if __name__ == "__main__":
+    main()

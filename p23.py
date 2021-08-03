@@ -1,13 +1,40 @@
 # Extract a given number of randomly selected elements from a list
 
+from linked_list.sll import sll
 import random
 
-values = input("Enter elements:").split()
-n = int(input("No of values:"))
 
-idx = [random.randint(0, (len(values) - 1)) for i in range(n)]
+def rnd_select(ll, n):
+    curr = ll.head
+    stack = []
+    temp_list = sll()
 
-random_values = [values[i] for i in idx]
-# random_values = random.sample(values, 3)
+    i = 1
+    while i <= n:
+        stack.append(random.randint(1, ll.get_length()))
+        i += 1
 
-print(random_values)
+    i = 1
+    while i <= n:
+        elem = ll.get_element(stack.pop())
+        temp_list.insert(elem)
+        i += 1
+
+    return temp_list
+
+
+def main():
+    values = input("Enter elements:").split()
+    n = int(input("Enter no of elements to select:"))
+    ll = sll()
+
+    for elem in values:
+        ll.insert(elem)
+
+    temp = rnd_select(ll, n)
+    ll.display()
+    temp.display()
+
+
+if __name__ == "__main__":
+    main()

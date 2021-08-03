@@ -35,3 +35,14 @@ class sll:
             curr = curr.link
 
         return length
+
+    def get_element(self, pos):
+        curr = self.head
+        count = 1
+
+        while curr != None:
+            if count == pos:
+                return curr.data
+
+            curr = curr.link
+            count += 1

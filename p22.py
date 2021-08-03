@@ -1,22 +1,33 @@
 # Create a list containing all integers within a given range
 
-start = int(input("Start:"))
-end = int(input("End:"))
+from linked_list.sll import sll, Node
 
 
 def gen_range(start, end):
-    values = []
+    ll = sll()
+
     if end < start:
         i = start
         while i >= end:
-            values.append(i)
+            ll.insert(i)
             i -= 1
+
     else:
         i = start
         while i <= end:
-            values.append(i)
+            ll.insert(i)
             i += 1
-    return values
+
+    return ll
 
 
-print(gen_range(start, end))
+def main():
+    start = int(input("Start:"))
+    end = int(input("End:"))
+
+    ll = gen_range(start, end)
+    ll.display()
+
+
+if __name__ == "__main__":
+    main()
