@@ -5,6 +5,22 @@ import random
 
 
 def rnd_select(ll, n):
+    """
+    Extract a number of randomly selected 
+    elements from given linked list
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    n: int
+        number of elements to randomly select
+
+    Returns
+    _______
+    sll
+        linked list containing randomly selected elements
+    """
     curr = ll.head
     stack = []
     temp_list = sll()

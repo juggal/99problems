@@ -4,6 +4,21 @@ from linked_list.sll import sll
 
 
 def list_split(ll, pos):
+    """
+    Split given linked list into two parts from given position
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    pos: int
+        position from where to split the linked list
+
+    Returns
+    _______
+    sll
+        Splitted half of the linked list
+    """
     curr = ll.head
     count = 1
     temp_list = None
@@ -23,6 +38,22 @@ def list_split(ll, pos):
 
 
 def list_rotate(ll, n):
+    """
+    Rotate given linked list n place left if n is positive
+    else rotate n places right if n is negative
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    n: int
+        number of places to rotate the linked list
+
+    Returns
+    _______
+    sll
+        rotated list by n places
+    """
     curr = ll.head
     count = 1
 

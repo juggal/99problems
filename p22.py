@@ -4,6 +4,21 @@ from linked_list.sll import sll, Node
 
 
 def gen_range(start, end):
+    """
+    Generate a linked list of all integers in given range
+
+    Parameters
+    __________
+    start: int
+        starting integer in range of elements
+    end: int
+        ending integer in range of elements
+
+    Returns
+    _______
+    sll
+        linked list containing all integers of given range
+    """
     ll = sll()
 
     if end < start:

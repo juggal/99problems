@@ -4,6 +4,18 @@ from linked_list.sll import sll
 
 
 def reverse_list(ll):
+    """
+    Reverse the given linked list
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+
+    Returns
+    _______
+    None
+    """
     curr = ll.head
     temp = None
     prev = None

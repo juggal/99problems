@@ -1,5 +1,4 @@
-# Determine whether two positive integer numbers are coprime
-
+# Calculate Euler's totient function phi(m)
 
 def gcd(number1, number2):
     """
@@ -47,11 +46,36 @@ def is_coprime(number1, number2):
         return False
 
 
-def main():
-    num1 = int(input("Enter first number:"))
-    num2 = int(input("Enter second number:"))
+def totient_phi(m):
+    """
+    Calculate euler's totient function phi(m)
 
-    result = is_coprime(num1, num2)
+    Parameters
+    __________
+    m: int
+        number on which to calculate euler's totient 
+
+    Returns
+    _______
+    int
+        euler's totient phi(m)
+    """
+    if m == 1:
+        return 1
+    else:
+        count = 0
+        i = 1
+        while i < m:
+            if is_coprime(m, i):
+                count += 1
+            i += 1
+        return count
+
+
+def main():
+    m = int(input("Enter M:"))
+
+    result = totient_phi(m)
     print(result)
 
 

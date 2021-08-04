@@ -4,6 +4,20 @@ from linked_list.sll import sll
 
 
 def encode(ll):
+    """
+    Apply run length encoding on given linked list
+    if an element has no duplicate simply copied into result
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+
+    Returns
+    _______
+    str
+        view of run length encoded linked list
+    """
     curr = ll.head
     prev = curr.data
     result = "("

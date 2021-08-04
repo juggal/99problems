@@ -4,6 +4,19 @@ from linked_list.sll import sll
 
 
 def pack(ll):
+    """
+    Packing duplicate elements into a sublist
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+
+    Returns
+    _______
+    str
+        view of packed duplicate elements into sublist
+    """
     curr = ll.head
     prev = curr.data
     result = "(("

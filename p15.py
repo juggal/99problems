@@ -4,6 +4,21 @@ from linked_list.sll import sll, Node
 
 
 def repli(ll, repeat):
+    """
+    Replicate the elements of given linked list by
+    specified number of times
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    repeat: int
+        number of times to replicate an element
+
+    Returns
+    _______
+    None
+    """
     curr = ll.head
 
     while curr != None:

@@ -4,6 +4,22 @@ from linked_list.sll import sll, Node
 
 
 def insert_at(ll, pos, data):
+    """
+    Insert an element to specified position in given linked list
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    pos: int
+        position at which to insert an element
+    data: any
+        data to be stored in the node
+
+    Returns
+    _______
+    None
+    """
     curr = ll.head
     count = 1
     prev = None

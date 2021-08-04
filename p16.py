@@ -4,6 +4,20 @@ from linked_list.sll import sll, Node
 
 
 def drop(ll, n):
+    """
+    Drop every N'th element from given linked list
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    n: int
+        multiples of which are used as index to drop elements
+
+    Returns
+    _______
+    None
+    """
     curr = ll.head
     count = 1
     prev = None

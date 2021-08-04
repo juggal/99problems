@@ -4,6 +4,23 @@ from linked_list.sll import sll
 
 
 def list_slice(ll, start, end):
+    """
+    Extract slice of given linked list from specified start and end position
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+    start: int
+        position from where to start slicing linked list
+    end: int
+        position where to end the slicing of linked list
+
+    Returns
+    _______
+    sll
+        Slice of given linked list
+    """
     curr = ll.head
     count = 1
     start_link = None

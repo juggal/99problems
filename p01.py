@@ -3,6 +3,18 @@ from linked_list.sll import sll
 
 
 def last_value(ll):
+    """
+    Gets the last element of linked list
+
+    Parameters
+    _________
+    ll: sll
+        linked list on which to be operated on
+
+    Returns
+    _______
+    None
+    """
     curr = ll.head
     while curr.link != None:
         curr = curr.link

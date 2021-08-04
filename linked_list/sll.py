@@ -1,14 +1,52 @@
 class Node:
-    def __init__(self, data=None):
+    """A class used to represent Node in linked list"""
+
+    def __init__(self, data=None, link=None):
+        """
+        Parameters
+        ----------
+        data: any, optional
+            actual data to be stored in Node
+        link: Node, optional
+            reference to another Node object
+
+        Returns
+        _______
+        None
+        """
         self.data = data
-        self.link = None
+        self.link = link
 
 
 class sll:
+    """Class used to reperesent linked list data structure"""
+
     def __init__(self, head=None):
+        """
+        Parameters
+        __________
+        head: Node, optional
+            Store reference to initial Node of linked list
+
+        Returns
+        _______
+        None
+        """
         self.head = head
 
     def insert(self, data):
+        """
+        Insert a new Node at the end of linked list
+
+        Parameters
+        __________
+        data: any
+            data to be added to linked list
+
+        Returns
+        _______
+        None
+        """
         if self.head == None:
             self.head = Node(data)
         else:
@@ -17,16 +55,41 @@ class sll:
                 curr = curr.link
             curr.link = Node(data)
 
-    def display(self):
+    def display(self, end="->"):
+        """
+        Display all linked list elements
+
+        Parameters
+        __________
+        end: str, optional
+            Seprator to be added between elements when displayed
+
+        Returns
+        _______
+        None
+        """
         curr = self.head
         result = ''
         while curr != None:
-            result += str(curr.data) + "->"
+            result += str(curr.data) + end
             curr = curr.link
-        result = result.strip("->")
+        result = result.strip(end)
         print(result)
 
     def get_length(self):
+        """
+        Get the length of the linked list
+
+        Parameters
+        __________
+        None
+
+        Returns
+        _______
+        int
+            legnth of linked list
+
+        """
         curr = self.head
         length = 0
 
@@ -37,6 +100,19 @@ class sll:
         return length
 
     def get_element(self, pos):
+        """
+        Get the element at specified position or returns None if position does not exist
+
+        Parameters
+        __________
+        pos: int
+            Position in linked list to fetch the element from
+
+        Returns
+        _______
+        any
+            Element found at specified position
+        """
         curr = self.head
         count = 1
 
@@ -46,3 +122,4 @@ class sll:
 
             curr = curr.link
             count += 1
+        return None

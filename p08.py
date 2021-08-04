@@ -4,6 +4,18 @@ from linked_list.sll import sll
 
 
 def compress(ll):
+    """
+    Remove duplicate elements from given linked list
+
+    Parameters
+    __________
+    ll: sll
+        linked list on which to be operated on
+
+    Returns
+    _______
+    None
+    """
     curr = ll.head
     prev = curr
 

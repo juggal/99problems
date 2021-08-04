@@ -4,6 +4,19 @@ from linked_list.sll import sll
 
 
 def count_elements(ll):
+    """
+    calculate length of linked list
+
+    Parameters
+    _________
+    ll: sll
+        linked list on which to be operated on
+
+    Returns
+    _______
+    int
+        length of linked list
+    """
     curr = ll.head
     length = 1
     while curr.link != None:
