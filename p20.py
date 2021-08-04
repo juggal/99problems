@@ -8,14 +8,14 @@ def remove_at(ll, pos):
     Remove an element from specified position in given linked list
 
     Parameters
-    __________
+    ----------
     ll: sll
         linked list on which to be operated on
     pos: int
         position from where to remove the element
 
     Returns
-    _______
+    -------
     None
     """
     curr = ll.head

@@ -8,7 +8,7 @@ def insert_at(ll, pos, data):
     Insert an element to specified position in given linked list
 
     Parameters
-    __________
+    ----------
     ll: sll
         linked list on which to be operated on
     pos: int
@@ -17,7 +17,7 @@ def insert_at(ll, pos, data):
         data to be stored in the node
 
     Returns
-    _______
+    -------
     None
     """
     curr = ll.head

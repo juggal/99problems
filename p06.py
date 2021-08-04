@@ -8,12 +8,12 @@ def is_palindrome(ll):
     check for given linked list is palindrome or not
 
     Parameters
-    __________
+    ----------
     ll: sll
         linked list on which to be operated on
 
     Returns
-    _______
+    -------
     bool
         is given linked list palindrome or not
     """

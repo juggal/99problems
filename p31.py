@@ -5,12 +5,12 @@ def is_prime(number):
     Check whether given number is prime or not
 
     Parameters
-    __________
+    ----------
     number: int
         number to check for prime or not
 
     Returns
-    _______
+    -------
     bool
         is number prime (True) or not (False)
     """

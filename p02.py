@@ -7,12 +7,12 @@ def last_but_one(ll):
     Get second last and last element of linked list
 
     Parameters
-    _________
+    ----------
     ll: sll
         linked list on which to be operated on
 
     Returns
-    _______
+    -------
     None
     """
     curr = ll.head

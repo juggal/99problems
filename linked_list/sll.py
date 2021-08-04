@@ -11,7 +11,7 @@ class Node:
             reference to another Node object
 
         Returns
-        _______
+        -------
         None
         """
         self.data = data
@@ -24,12 +24,12 @@ class sll:
     def __init__(self, head=None):
         """
         Parameters
-        __________
+        ----------
         head: Node, optional
             Store reference to initial Node of linked list
 
         Returns
-        _______
+        -------
         None
         """
         self.head = head
@@ -39,12 +39,12 @@ class sll:
         Insert a new Node at the end of linked list
 
         Parameters
-        __________
+        ----------
         data: any
             data to be added to linked list
 
         Returns
-        _______
+        -------
         None
         """
         if self.head == None:
@@ -60,12 +60,12 @@ class sll:
         Display all linked list elements
 
         Parameters
-        __________
+        ----------
         end: str, optional
             Seprator to be added between elements when displayed
 
         Returns
-        _______
+        -------
         None
         """
         curr = self.head
@@ -81,11 +81,11 @@ class sll:
         Get the length of the linked list
 
         Parameters
-        __________
+        ----------
         None
 
         Returns
-        _______
+        -------
         int
             legnth of linked list
 
@@ -104,12 +104,12 @@ class sll:
         Get the element at specified position or returns None if position does not exist
 
         Parameters
-        __________
+        ----------
         pos: int
             Position in linked list to fetch the element from
 
         Returns
-        _______
+        -------
         any
             Element found at specified position
         """

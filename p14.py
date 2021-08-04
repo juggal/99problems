@@ -8,12 +8,12 @@ def dupli(ll):
     Duplicate the elements of given linked list by 2 times
 
     Parameters
-    __________
+    ----------
     ll: sll
         linked list on which to be operated on
 
     Returns
-    _______
+    -------
     None
     """
     curr = ll.head

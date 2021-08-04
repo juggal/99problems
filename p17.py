@@ -8,14 +8,14 @@ def list_split(ll, pos):
     Split given linked list into two parts from given position
 
     Parameters
-    __________
+    ----------
     ll: sll
         linked list on which to be operated on
     pos: int
         position from where to split the linked list
 
     Returns
-    _______
+    -------
     sll
         Splitted half of the linked list
     """

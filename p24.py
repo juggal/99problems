@@ -10,14 +10,14 @@ def rnd_select(ll, n):
     elements from given linked list
 
     Parameters
-    __________
+    ----------
     ll: sll
         linked list on which to be operated on
     n: int
         number of elements to randomly select
 
     Returns
-    _______
+    -------
     sll
         linked list containing randomly selected elements
     """
@@ -44,14 +44,14 @@ def gen_range(start, end):
     Generate a linked list of all integers in given range
 
     Parameters
-    __________
+    ----------
     start: int
         starting integer in range of elements
     end: int
         ending integer in range of elements
 
     Returns
-    _______
+    -------
     sll
         linked list containing all integers of given range
     """
@@ -78,14 +78,14 @@ def lotto_select(m, n):
     linked list containing elements from 1..M
 
     Parameters
-    __________
+    ----------
     m: int
        upper limit of range till where to generate the linked list
     n: int
         number of elements to randomly select
 
     Returns
-    _______
+    -------
     sll
         linked list of randomly select elements in range 1 to m
     """
